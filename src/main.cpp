@@ -1,15 +1,13 @@
 #include <Arduino.h>
-int potmeter = A0;
-int ledPin = 11; // configureer de LED pin.
+#include "LayoutDriver/LayoutDriver.h"
+
+LayoutDriver layoutDriver;
 
 void setup() {
-    Serial.begin(9600); // zet seriele poort aan op 9600 baud.
-    pinMode(ledPin, OUTPUT); // zet de LED pin als uitgang
+    Serial.begin(9600);
+    Serial.print("ACMRMega v1.0");
 }
 
-void loop()
-{
-    int potentiometerValue = analogRead(potmeter);
-    int brightness = potentiometerValue / 4;
-    analogWrite(ledPin, brightness);
+void loop() {
+    layoutDriver.run();
 }
