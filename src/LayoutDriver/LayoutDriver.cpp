@@ -5,7 +5,7 @@
 #include "LayoutDriver.h"
 #include "MotorControl/MotorDriver.h"
 
-Motordriver motordriver(11,7,8,A0);
+Motordriver motordriver(11,23,24,A0);
 
 LayoutDriver::LayoutDriver(){
 }
